@@ -1,0 +1,142 @@
+<!-- original : https://codepen.io/SeanNorton/pen/LWBXQL -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Bebas+Neue" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>greeting2</title>
+
+    <style>
+
+        /*CSS RESETS*/
+
+body{
+    background-color: #fff;
+    line-height: 1.6;
+
+}
+
+h1 {
+    margin-top: 0;
+}
+
+
+/*CSS START*/
+
+.full-table {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+.table-cell {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.card {
+    padding: 10px 25px 10px 25px;
+    border-radius: 10px;
+    background: #553c4e;
+    width: 85vw;
+    color: #fff;
+    display: inline-block;
+    box-shadow: 2px 2px 1px 0px #330835;
+}
+
+.card:hover {
+    margin-top: 2px;
+    box-shadow: none;
+}
+
+.clock {
+    display: inline;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2em;
+   
+}
+
+.time {
+    display: inline;
+    min-width: 37px;
+}
+
+.colon {
+    font-size: 1.1em;
+    display: inline-block;
+}
+
+.date {
+    display: inline;
+    min-width: 162px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2em;
+    padding-right: 30px;
+}
+.greet{
+    
+    display:inline;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+     padding-right: 30px;
+}
+
+    </style>
+</head>
+<body>
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto:400,700" rel="stylesheet">
+
+<div class="full-table">
+  <div class="table-cell">
+    <div class="date" id="date"></div>
+  </div>
+</div>
+
+<script>
+    function getWeekOfYear(today) {
+        let startYearDay = '1/1/'+today.getFullYear();
+        let startDate = new Date(startYearDay);
+
+        let diffDay = (today - startDate) / 86400000; // 1000 * 60 * 60 * 24
+
+        let weekOfYear = parseInt(diffDay / 7) + 1;
+
+        // 요일을 기준으로 1월 1일보다 이전 요일이라면 1주가 더 늘었으므로 +1 시켜줌.
+        // if( today.getDay() < startDate.getDay() ) {
+        //     weekOfYear += 1;
+        // }
+
+        return weekOfYear;
+    }
+    
+    function date() {
+        var today = new Date();
+        today.get
+        var weekOfYear = getWeekOfYear();
+        document.getElementById('date').innerHTML = today.toDateString();
+    }
+
+
+    
+// adds zero infront of single digit number
+function zeros(num) {
+if (num < 10) {
+    num = '0' + num
+};
+return num;
+}
+
+function dateTime() {
+date();
+setTimeout(dateTime, 1000*60);
+}
+
+dateTime()
+// END
+</script>
+
+</body>
+</html>
