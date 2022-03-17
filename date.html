@@ -114,8 +114,7 @@ h1 {
     
     function date() {
         var today = new Date();
-        today.get
-        var weekOfYear = getWeekOfYear();
+        var weekOfYear = getWeekOfYear(today);
         document.getElementById('date').innerHTML = today.toDateString()+', '+ weekOfYear + 'W';
     }
 
